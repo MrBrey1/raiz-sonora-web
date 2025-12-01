@@ -1,0 +1,363 @@
+/* ======================================================
+   Raíz Sonora – Identidad visual
+   Paleta: fondo cósmico oscuro, verde esmeralda, cian, dorado suave
+====================================================== */
+
+/* ==== Variables de color (paleta de la marca) ==== */
+:root {
+  --bg-main: #020617;                 /* fondo principal casi negro azulado */
+  --bg-soft: #020617;
+  --bg-soft-2: #020617;
+  --accent-green: #22c55e;            /* sanación, naturaleza */
+  --accent-cyan: #06b6d4;             /* vibración, agua, sonido */
+  --accent-gold: #eab308;             /* luz espiritual */
+  --text-main: #f9fafb;
+  --text-muted: #e5e7eb;
+  --text-soft: #9ca3af;
+  --border-glow: rgba(94, 234, 212, 0.65);
+  --shadow-strong: 0 18px 45px rgba(15, 23, 42, 0.95);
+}
+
+/* ==== Reset básico ==== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ==== Estilos globales ==== */
+body {
+  font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  background:
+    radial-gradient(circle at top, rgba(34, 211, 238, 0.25), transparent 55%),
+    radial-gradient(circle at bottom, rgba(34, 197, 94, 0.14), transparent 55%),
+    var(--bg-main);
+  color: var(--text-main);
+  line-height: 1.6;
+}
+
+/* Limitar ancho del contenido */
+.main-content {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 1.5rem;
+}
+
+/* ==== Header & navegación ==== */
+.main-header {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1.5rem 1.5rem 0.75rem;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.3);
+  position: relative;
+  z-index: 10;
+  background: radial-gradient(circle at top left, rgba(15, 118, 110, 0.3), transparent 60%);
+}
+
+.logo-area {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Logo como símbolo: núcleo + ondas a su alrededor */
+.logo-circle {
+  position: relative;
+  width: 52px;
+  height: 52px;
+  border-radius: 999px;
+  background: radial-gradient(circle at 30% 30%, #f9fafb, var(--accent-gold), var(--accent-green));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  color: #020617;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow:
+    0 0 18px rgba(234, 179, 8, 0.55),
+    0 0 40px rgba(34, 197, 94, 0.65);
+}
+
+/* Círculo exterior → vibración / frecuencia expansiva */
+.logo-circle::before {
+  content: "";
+  position: absolute;
+  inset: -8px;
+  border-radius: inherit;
+  border: 1px dashed rgba(94, 234, 212, 0.8);
+  opacity: 0.9;
+}
+
+/* Línea de pulso interior (frecuencia) */
+.logo-circle::after {
+  content: "";
+  position: absolute;
+  width: 70%;
+  height: 2px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, transparent, #22c55e, #06b6d4, transparent);
+  box-shadow: 0 0 10px rgba(94, 234, 212, 0.8);
+  transform: translateY(11px);
+}
+
+.main-header h1 {
+  font-size: 1.8rem;
+}
+
+.subtitle {
+  font-size: 0.9rem;
+  color: var(--text-soft);
+}
+
+/* Nav */
+.main-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.main-nav a {
+  text-decoration: none;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  padding: 0.4rem 0.9rem;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  background: rgba(15, 23, 42, 0.7);
+  transition: all 0.2s ease;
+}
+
+.main-nav a:hover {
+  border-color: var(--accent-cyan);
+  background: radial-gradient(circle at top, rgba(34, 197, 94, 0.15), rgba(8, 47, 73, 0.85));
+  color: #e0f2fe;
+}
+
+/* Barra de frecuencia debajo del header */
+.frequency-bar {
+  width: 100%;
+  height: 4px;
+  background:
+    linear-gradient(90deg,
+      transparent 0%,
+      rgba(34, 197, 94, 0.3) 12%,
+      rgba(45, 212, 191, 0.55) 28%,
+      rgba(56, 189, 248, 0.8) 45%,
+      rgba(244, 244, 245, 0.7) 60%,
+      rgba(56, 189, 248, 0.8) 75%,
+      rgba(16, 185, 129, 0.55) 88%,
+      transparent 100%);
+  box-shadow: 0 0 18px rgba(59, 130, 246, 0.9);
+  opacity: 0.9;
+}
+
+/* ==== Secciones ==== */
+.section {
+  margin-top: 2rem;
+}
+
+/* Hero principal */
+.hero {
+  position: relative;
+  margin-top: 1rem;
+  padding: 2.5rem 1.5rem 1.8rem;
+  border-radius: 1rem;
+
+  /* Fondo de la imagen base */
+  background: url("img/header-bg.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.95);
+  overflow: hidden;
+}
+
+/* Capa de degradados ENCIMA de la imagen */
+.hero {
+  position: relative;
+  margin-top: 1rem;
+  padding: 2.5rem 1.5rem 1.8rem;
+  border-radius: 1rem;
+
+  /* Fondo de la imagen base */
+  background: url("img/header-bg.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.95);
+  overflow: hidden;
+}
+
+/* Capa de degradados ENCIMA de la imagen */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at top left, rgba(59, 130, 246, 0.6), transparent 60%),
+    radial-gradient(circle at bottom right, rgba(34, 197, 94, 0.6), transparent 60%),
+    linear-gradient(135deg, rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.4));
+    
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Para que el texto quede por encima del degradado */
+.hero > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* ==== Frecuencias (rejilla de tarjetas) ==== */
+.freq-grid {
+  margin-top: 1.2rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+.freq-card {
+  padding: 1rem;
+  border-radius: 0.9rem;
+  background:
+    radial-gradient(circle at top, rgba(56, 189, 248, 0.08), transparent 60%),
+    rgba(15, 23, 42, 0.9);
+  border: 1px solid rgba(148, 163, 184, 0.5);
+  box-shadow: 0 12px 32px rgba(15, 23, 42, 0.9);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Línea de frecuencia en el borde izquierdo de cada tarjeta */
+.freq-card::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 15%;
+  bottom: 15%;
+  width: 3px;
+  border-radius: 999px;
+  background: linear-gradient(
+    180deg,
+    rgba(34, 197, 94, 0.3),
+    rgba(56, 189, 248, 0.9),
+    rgba(244, 244, 245, 0.7),
+    rgba(34, 197, 94, 0.3)
+  );
+  box-shadow: 0 0 12px rgba(56, 189, 248, 0.9);
+}
+
+.freq-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.15rem;
+}
+
+.freq-tag {
+  font-size: 0.9rem;
+  color: var(--accent-cyan);
+  margin-bottom: 0.6rem;
+}
+
+/* Mejor distribución en pantallas grandes */
+@media (min-width: 768px) {
+  .freq-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+/* ==== Sesiones de Raíz Sonora ==== */
+.sessions-grid {
+  margin-top: 1.2rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+.session-card {
+  position: relative;
+  padding: 1rem 1.1rem 1.1rem 1.1rem;
+  border-radius: 0.9rem;
+  background:
+    radial-gradient(circle at top, rgba(34, 197, 94, 0.07), transparent 60%),
+    rgba(15, 23, 42, 0.9);
+  border: 1px solid rgba(74, 222, 128, 0.5);
+  box-shadow: 0 12px 32px rgba(15, 23, 42, 0.9);
+  overflow: hidden;
+}
+
+/* pequeño icono circular tipo “sol/energía” en la esquina */
+.session-card::before {
+  content: "";
+  position: absolute;
+  top: -18px;
+  right: -18px;
+  width: 48px;
+  height: 48px;
+  border-radius: 999px;
+  background: radial-gradient(circle, rgba(234, 179, 8, 0.9), transparent 70%);
+  opacity: 0.8;
+  box-shadow: 0 0 18px rgba(234, 179, 8, 0.7);
+}
+
+.session-card h3 {
+  font-size: 1.15rem;
+  margin-bottom: 0.2rem;
+}
+
+.session-tag {
+  font-size: 0.9rem;
+  color: var(--accent-green);
+  margin-bottom: 0.6rem;
+}
+
+/* Mejor distribución en pantallas grandes */
+@media (min-width: 768px) {
+  .sessions-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* Botón principal */
+.btn-primary {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.7rem 1.4rem;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: #020617;
+  background: linear-gradient(135deg, var(--accent-gold), var(--accent-green));
+  box-shadow: 0 15px 32px rgba(234, 179, 8, 0.5);
+  transition: transform 0.15s ease, box-shadow 0.15s ease, filter 0.15s ease;
+}
+
+.btn-primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 22px 48px rgba(234, 179, 8, 0.65);
+  filter: brightness(1.05);
+}
+
+/* Placeholder donde irá Spotify */
+.embed-placeholder {
+  margin-top: 1rem;
+  padding: 1rem;
+  border-radius: 0.75rem;
+  border: 1px dashed rgba(148, 163, 1
+/* Contenedor del reproductor de Spotify */
+.spotify-embed {
+  margin-top: 1rem;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  box-shadow: 0 18px 36px rgba(15, 23, 42, 0.9);
+  border: 1px solid rgba(148, 163, 184, 0.4);
+}
+
+.spotify-embed iframe {
+  display: block;
+  width: 100%;
+  border: none;
+}
