@@ -183,7 +183,7 @@ body {
   border-radius: 1rem;
 
   /* Fondo de la imagen base */
-  background: url("img/header-bg.jpg");
+  background: url("/img/header-bg.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -360,4 +360,73 @@ body {
   display: block;
   width: 100%;
   border: none;
+}
+/* ==== REFLEXIONES – RAÍZ SONORA ==== */
+
+#reflexiones h2 {
+  font-size: 1.4rem;
+  margin-bottom: 0.6rem;
+}
+
+#reflexiones > p {
+  font-size: 0.95rem;
+  color: var(--text-soft, #9ca3af);
+  margin-bottom: 1.2rem;
+}
+
+/* Contenedor de las tarjetas */
+.reflection-grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+/* En pantallas grandes: 2 columnas */
+@media (min-width: 768px) {
+  .reflection-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* Tarjeta individual */
+.reflection-card {
+  position: relative;
+  padding: 1.25rem 1.4rem 1.4rem;
+  border-radius: 1.25rem;
+  background:
+    radial-gradient(circle at top left, rgba(56, 189, 248, 0.16), transparent 60%),
+    radial-gradient(circle at bottom right, rgba(34, 197, 94, 0.16), transparent 60%),
+    rgba(15, 23, 42, 0.96);
+  border: 1px solid rgba(148, 163, 184, 0.6);
+  box-shadow: 0 18px 45px rgba(15, 23, 42, 0.9);
+  overflow: hidden;
+}
+
+/* Pequeño brillo en la esquina, como energía */
+.reflection-card::before {
+  content: "";
+  position: absolute;
+  top: -22px;
+  right: -22px;
+  width: 60px;
+  height: 60px;
+  border-radius: 999px;
+  background:
+    radial-gradient(circle, rgba(234, 179, 8, 0.95), transparent 70%);
+  opacity: 0.75;
+  pointer-events: none;
+}
+
+/* Título de reflexión */
+.reflection-card h3 {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  color: var(--text-main, #f9fafb);
+}
+
+/* Texto de reflexión */
+.reflection-text {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: var(--text-muted, #e5e7eb);
+  white-space: pre-line; /* respeta saltos de línea si los usas */
 }
