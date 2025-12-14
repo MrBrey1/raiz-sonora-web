@@ -74,13 +74,14 @@
         <p class="subtitle">Frecuencias, vibración y energía</p>
       </div>
 
+      <!-- NAV (Radio arriba también) -->
       <nav class="main-nav">
         <a href="#intro">Inicio</a>
+        <a href="#radio">Radio</a>
         <a href="#playlists">Playlists</a>
         <a href="#frecuencias">Frecuencias</a>
         <a href="#sesiones">Sesiones</a>
         <a href="#reflexiones">Reflexiones</a>
-        <a href="#radio">Radio</a>
       </nav>
     </header>
 
@@ -99,7 +100,49 @@
             Conecta con vibraciones de 432 Hz, 528 Hz, 963 Hz y otras frecuencias sanadoras
             diseñadas para armonizar tu mente, tu cuerpo y tu espíritu.
           </p>
-          <a href="#playlists" class="btn-primary">Escuchar sesiones</a>
+          <!-- BOTÓN: ahora va a la radio -->
+          <a href="#radio" class="btn-primary">Iniciar Radio</a>
+        </div>
+      </section>
+
+      <!-- RADIO / REPRODUCTOR PROPIO (MOVIDO ARRIBA) -->
+      <section id="radio" class="section card">
+        <h2>Sesiones originales de Raíz Sonora</h2>
+        <p>
+          Esta es la selección musical propia de Raíz Sonora: reflexiones sonoras,
+          atmósferas meditativas y paisajes internos para acompañarte mientras exploras la web.
+        </p>
+
+        <!-- Selector de playlists internas (4) -->
+        <div class="radio-selectors">
+          <button class="radio-tab active" data-pl="ecos" type="button">Ecos De Calma</button>
+          <button class="radio-tab" data-pl="ritual" type="button">Ritual De Descanso</button>
+          <button class="radio-tab" data-pl="mantra" type="button">Mantra Del Alma</button>
+          <button class="radio-tab" data-pl="reflexiones" type="button">Reflexiones</button>
+        </div>
+
+        <div class="audio-player">
+          <div class="player-main">
+            <button id="prevBtn" class="btn-icon" aria-label="Pista anterior">⏮</button>
+            <button id="playPauseBtn" class="btn-icon" aria-label="Reproducir / Pausar">▶</button>
+            <button id="nextBtn" class="btn-icon" aria-label="Siguiente pista">⏭</button>
+
+            <div class="player-info">
+              <div id="trackTitle" class="track-title">Cargando pista…</div>
+              <div class="track-time">
+                <span id="currentTime">0:00</span> / <span id="duration">0:00</span>
+              </div>
+              <div class="progress-container" id="progressContainer">
+                <div class="progress" id="progress"></div>
+              </div>
+            </div>
+          </div>
+
+          <ul class="playlist" id="playlist">
+            <!-- La playlist se genera desde player.js -->
+          </ul>
+
+          <audio id="audio"></audio>
         </div>
       </section>
 
@@ -185,9 +228,10 @@
         </p>
 
         <div class="spotify-embed">
-          <iframe style="border-radius:12px"
-            src="https://open.spotify.com/embed/playlist/4HWjpFKItt5HYSqmrJ3ZzB?utm_source=generator"
-            width="100%" height="352" frameborder="0" allowfullscreen=""
+          <!-- Spotify iframe ACTUALIZADO -->
+          <iframe data-testid="embed-iframe" style="border-radius:12px"
+            src="https://open.spotify.com/embed/playlist/25lxN8Q32wnOuDt9XqouhR?utm_source=generator"
+            width="100%" height="352" frameBorder="0" allowfullscreen=""
             allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
             loading="lazy"></iframe>
         </div>
@@ -388,39 +432,6 @@
             </p>
           </article>
 
-        </div>
-      </section>
-
-      <!-- RADIO / REPRODUCTOR PROPIO -->
-      <section id="radio" class="section card">
-        <h2>Sesiones originales de Raíz Sonora</h2>
-        <p>
-          Esta es la selección musical propia de Raíz Sonora: reflexiones sonoras,
-          atmósferas meditativas y paisajes internos para acompañarte mientras exploras la web.
-        </p>
-
-        <div class="audio-player">
-          <div class="player-main">
-            <button id="prevBtn" class="btn-icon" aria-label="Pista anterior">⏮</button>
-            <button id="playPauseBtn" class="btn-icon" aria-label="Reproducir / Pausar">▶</button>
-            <button id="nextBtn" class="btn-icon" aria-label="Siguiente pista">⏭</button>
-
-            <div class="player-info">
-              <div id="trackTitle" class="track-title">Cargando pista…</div>
-              <div class="track-time">
-                <span id="currentTime">0:00</span> / <span id="duration">0:00</span>
-              </div>
-              <div class="progress-container" id="progressContainer">
-                <div class="progress" id="progress"></div>
-              </div>
-            </div>
-          </div>
-
-          <ul class="playlist" id="playlist">
-            <!-- La playlist se genera desde player.js -->
-          </ul>
-
-          <audio id="audio"></audio>
         </div>
       </section>
 
