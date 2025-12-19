@@ -11,6 +11,12 @@
   <!-- KEYWORDS -->
   <meta name="keywords" content="raíz sonora, frecuencias, 432hz, 528hz, 963hz, meditación, sonido curativo, música espiritual, vibración, energía, relajación, sanación sonora">
 
+  <!-- CANONICAL -->
+  <link rel="canonical" href="https://raizsonora.com/">
+
+  <!-- THEME COLOR (móvil) -->
+  <meta name="theme-color" content="#0b1020">
+
   <!-- OPEN GRAPH -->
   <meta property="og:title" content="Raíz Sonora – Frecuencias elevadas">
   <meta property="og:description" content="Eleva tu energía con música espiritual y frecuencias que transforman tu vibración.">
@@ -49,9 +55,15 @@
   <!-- FAVICON -->
   <link rel="icon" type="image/png" href="img/favicon.png">
 
+  <!-- PERFORMANCE: Spotify preconnect -->
+  <link rel="preconnect" href="https://open.spotify.com">
+  <link rel="preconnect" href="https://i.scdn.co">
+  <link rel="preconnect" href="https://t.scdn.co">
+
   <!-- CSS -->
   <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
   <div class="page">
 
@@ -74,14 +86,13 @@
         <p class="subtitle">Frecuencias, vibración y energía</p>
       </div>
 
-      <!-- NAV (Radio arriba también) -->
       <nav class="main-nav">
         <a href="#intro">Inicio</a>
-        <a href="#radio">Radio</a>
         <a href="#playlists">Playlists</a>
         <a href="#frecuencias">Frecuencias</a>
         <a href="#sesiones">Sesiones</a>
         <a href="#reflexiones">Reflexiones</a>
+        <a href="#radio">Radio</a>
       </nav>
     </header>
 
@@ -100,49 +111,63 @@
             Conecta con vibraciones de 432 Hz, 528 Hz, 963 Hz y otras frecuencias sanadoras
             diseñadas para armonizar tu mente, tu cuerpo y tu espíritu.
           </p>
-          <!-- BOTÓN: ahora va a la radio -->
-          <a href="#radio" class="btn-primary">Iniciar Radio</a>
+          <a href="#radio" class="btn-primary">Escuchar radio</a>
         </div>
       </section>
 
-      <!-- RADIO / REPRODUCTOR PROPIO (MOVIDO ARRIBA) -->
-      <section id="radio" class="section card">
-        <h2>Sesiones originales de Raíz Sonora</h2>
+      <!-- PLAYLISTS PROPIAS (arriba) -->
+      <section id="playlists" class="section card">
+        <h2>Playlists oficiales</h2>
         <p>
-          Esta es la selección musical propia de Raíz Sonora: reflexiones sonoras,
-          atmósferas meditativas y paisajes internos para acompañarte mientras exploras la web.
+          Estas son las playlists principales de Raíz Sonora. Cada una es un viaje:
+          calma, presencia, reflexión y descanso profundo.
         </p>
 
-        <!-- Selector de playlists internas (4) -->
-        <div class="radio-selectors">
-          <button class="radio-tab active" data-pl="ecos" type="button">Ecos De Calma</button>
-          <button class="radio-tab" data-pl="ritual" type="button">Ritual De Descanso</button>
-          <button class="radio-tab" data-pl="mantra" type="button">Mantra Del Alma</button>
-          <button class="radio-tab" data-pl="reflexiones" type="button">Reflexiones</button>
+        <!-- Si en tu styles.css ya tienes grids/cards, esto se verá bien.
+             Si no, igual funciona sin romper nada. -->
+        <div class="sessions-grid">
+          <article class="session-card">
+            <h3>Ecos de Calma</h3>
+            <p class="session-tag">Respirar · Soltar · Volver</p>
+            <p>Un espacio para bajar el ruido y volver al centro.</p>
+            <a class="btn-primary" href="/ecos-de-calma/">Abrir</a>
+          </article>
+
+          <article class="session-card">
+            <h3>Mantra del Alma</h3>
+            <p class="session-tag">Mantras · Presencia · Intención</p>
+            <p>Palabras y vibración para alinearte desde adentro.</p>
+            <a class="btn-primary" href="/mantra-del-alma/">Abrir</a>
+          </article>
+
+          <article class="session-card">
+            <h3>Reflexiones</h3>
+            <p class="session-tag">Conciencia · Enfoque · Calma</p>
+            <p>Mensajes cortos que te aterrizan y te elevan.</p>
+            <a class="btn-primary" href="/reflexiones/">Abrir</a>
+          </article>
+
+          <article class="session-card">
+            <h3>Ritual de Descanso</h3>
+            <p class="session-tag">Sueño · Relajación · Paz</p>
+            <p>Una puerta suave hacia el descanso profundo.</p>
+            <a class="btn-primary" href="/ritual-de-descanso/">Abrir</a>
+          </article>
         </div>
 
-        <div class="audio-player">
-          <div class="player-main">
-            <button id="prevBtn" class="btn-icon" aria-label="Pista anterior">⏮</button>
-            <button id="playPauseBtn" class="btn-icon" aria-label="Reproducir / Pausar">▶</button>
-            <button id="nextBtn" class="btn-icon" aria-label="Siguiente pista">⏭</button>
+        <hr style="opacity:.2; margin:24px 0;">
 
-            <div class="player-info">
-              <div id="trackTitle" class="track-title">Cargando pista…</div>
-              <div class="track-time">
-                <span id="currentTime">0:00</span> / <span id="duration">0:00</span>
-              </div>
-              <div class="progress-container" id="progressContainer">
-                <div class="progress" id="progress"></div>
-              </div>
-            </div>
-          </div>
+        <h2>Spotify</h2>
+        <p>
+          También puedes escuchar las playlists en Spotify.
+        </p>
 
-          <ul class="playlist" id="playlist">
-            <!-- La playlist se genera desde player.js -->
-          </ul>
-
-          <audio id="audio"></audio>
+        <div class="spotify-embed">
+          <iframe style="border-radius:12px"
+            src="https://open.spotify.com/embed/playlist/4HWjpFKItt5HYSqmrJ3ZzB?utm_source=generator"
+            width="100%" height="352" frameborder="0" allowfullscreen=""
+            allow="clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+            loading="lazy"></iframe>
         </div>
       </section>
 
@@ -212,31 +237,6 @@
         </div>
       </section>
 
-      <!-- PLAYLISTS -->
-      <section id="playlists" class="section card">
-        <h2>Música y sesiones espirituales</h2>
-        <p>
-          Aquí encontrarás las playlists y sesiones oficiales de Raíz Sonora, creadas
-          para acompañarte en meditaciones, sanación emocional, relajación profunda y
-          estados elevados de conciencia.
-        </p>
-
-        <p>
-          Cada pieza musical está diseñada como una experiencia espiritual, combinando
-          frecuencias elevadas, paisajes sonoros atmosféricos y una intención energética
-          de transformación.
-        </p>
-
-        <div class="spotify-embed">
-          <!-- Spotify iframe ACTUALIZADO -->
-          <iframe data-testid="embed-iframe" style="border-radius:12px"
-            src="https://open.spotify.com/embed/playlist/25lxN8Q32wnOuDt9XqouhR?utm_source=generator"
-            width="100%" height="352" frameBorder="0" allowfullscreen=""
-            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-            loading="lazy"></iframe>
-        </div>
-      </section>
-
       <!-- SESIONES -->
       <section id="sesiones" class="section card">
         <h2>Sesiones de Raíz Sonora</h2>
@@ -295,8 +295,6 @@
         </p>
 
         <div class="reflection-grid">
-
-          <!-- REFLEXIÓN 1 -->
           <article class="reflection-card">
             <h3>El susurro del silencio</h3>
             <p class="reflection-text">
@@ -306,7 +304,6 @@
             </p>
           </article>
 
-          <!-- REFLEXIÓN 2 -->
           <article class="reflection-card">
             <h3>El ritmo de tu propio tiempo</h3>
             <p class="reflection-text">
@@ -316,7 +313,6 @@
             </p>
           </article>
 
-          <!-- REFLEXIÓN 3 -->
           <article class="reflection-card">
             <h3>La luz que nace del adentro</h3>
             <p class="reflection-text">
@@ -326,7 +322,6 @@
             </p>
           </article>
 
-          <!-- REFLEXIÓN 4 -->
           <article class="reflection-card">
             <h3>El valor de soltar</h3>
             <p class="reflection-text">
@@ -337,7 +332,6 @@
             </p>
           </article>
 
-          <!-- REFLEXIÓN 5 -->
           <article class="reflection-card">
             <h3>El arte de escuchar el alma</h3>
             <p class="reflection-text">
@@ -347,7 +341,6 @@
             </p>
           </article>
 
-          <!-- AFIRMACIONES 1 -->
           <article class="reflection-card">
             <h3>Hoy camino con calma y propósito</h3>
             <p class="reflection-text">
@@ -355,7 +348,6 @@
             </p>
           </article>
 
-          <!-- AFIRMACIONES 2 -->
           <article class="reflection-card">
             <h3>Mi mente, mi cuerpo y mi energía trabajan en armonía</h3>
             <p class="reflection-text">
@@ -363,7 +355,6 @@
             </p>
           </article>
 
-          <!-- AFIRMACIONES 3 -->
           <article class="reflection-card">
             <h3>Atraigo claridad, bienestar y oportunidades alineadas conmigo</h3>
             <p class="reflection-text">
@@ -371,7 +362,6 @@
             </p>
           </article>
 
-          <!-- AFIRMACIONES 4 -->
           <article class="reflection-card">
             <h3>Todo lo que necesito para crecer ya vive dentro de mí</h3>
             <p class="reflection-text">
@@ -379,7 +369,6 @@
             </p>
           </article>
 
-          <!-- AFIRMACIONES 5 -->
           <article class="reflection-card">
             <h3>Hoy elijo la paz como mi guía</h3>
             <p class="reflection-text">
@@ -387,7 +376,6 @@
             </p>
           </article>
 
-          <!-- MENSAJE POSITIVO 1 -->
           <article class="reflection-card">
             <h3>Respira: estás haciendo más de lo que crees</h3>
             <p class="reflection-text">
@@ -396,7 +384,6 @@
             </p>
           </article>
 
-          <!-- MENSAJE POSITIVO 2 -->
           <article class="reflection-card">
             <h3>La vida recompensa a quien avanza con fe</h3>
             <p class="reflection-text">
@@ -405,7 +392,6 @@
             </p>
           </article>
 
-          <!-- MENSAJE POSITIVO 3 -->
           <article class="reflection-card">
             <h3>Eres luz, incluso en tus días nublados</h3>
             <p class="reflection-text">
@@ -414,7 +400,6 @@
             </p>
           </article>
 
-          <!-- MENSAJE POSITIVO 4 -->
           <article class="reflection-card">
             <h3>Lo que es para ti encuentra su camino</h3>
             <p class="reflection-text">
@@ -423,7 +408,6 @@
             </p>
           </article>
 
-          <!-- MENSAJE POSITIVO 5 -->
           <article class="reflection-card">
             <h3>Hoy mereces sentirte bien</h3>
             <p class="reflection-text">
@@ -431,7 +415,44 @@
               La paz también es un derecho, no solo un premio.
             </p>
           </article>
+        </div>
+      </section>
 
+      <!-- RADIO / REPRODUCTOR PROPIO -->
+      <section id="radio" class="section card">
+        <h2>Sesiones originales de Raíz Sonora</h2>
+        <p>
+          Esta es la selección musical propia de Raíz Sonora: reflexiones sonoras,
+          atmósferas meditativas y paisajes internos para acompañarte mientras exploras la web.
+        </p>
+
+        <!-- Portada actual del álbum (si tu player.js la maneja, perfecto; si no, no rompe nada) -->
+        <div class="album-cover-wrap" style="margin: 14px 0 18px;">
+          <img id="albumCover" src="img/albums/reflexiones.png" alt="Portada del álbum" style="width:100%; max-width:420px; border-radius:12px; display:block;">
+        </div>
+
+        <div class="audio-player">
+          <div class="player-main">
+            <button id="prevBtn" class="btn-icon" aria-label="Pista anterior">⏮</button>
+            <button id="playPauseBtn" class="btn-icon" aria-label="Reproducir / Pausar">▶</button>
+            <button id="nextBtn" class="btn-icon" aria-label="Siguiente pista">⏭</button>
+
+            <div class="player-info">
+              <div id="trackTitle" class="track-title">Cargando pista…</div>
+              <div class="track-time">
+                <span id="currentTime">0:00</span> / <span id="duration">0:00</span>
+              </div>
+              <div class="progress-container" id="progressContainer">
+                <div class="progress" id="progress"></div>
+              </div>
+            </div>
+          </div>
+
+          <ul class="playlist" id="playlist">
+            <!-- La playlist se genera desde player.js -->
+          </ul>
+
+          <audio id="audio"></audio>
         </div>
       </section>
 
